@@ -13,10 +13,13 @@
 
 \documentclass[een]{practicumverslag}
 \def\thesubsubsection{\alph{subsubsection}}
+\setlength\parindent{0pt}
 
 %%% PACKAGES %%%
 \usepackage{lipsum}
 \usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{mathtools}
 
 
 \begin{document}
@@ -35,12 +38,121 @@
 
 \subsection*{Opgave 1}
 
-\lipsum[3-3]
+Zij $P \in \mathbb{R}^{n \times n} $ en $x \in \mathbb{R}^{n}$, dan $Px = \frac{x + Fx}{2}$ met $F \in \mathbb{R}^{n \times n}$ de matrix die de elementen $x_1$ en $x_2$, $x_3$ en $x_4$, ... omwisselt bij de vermenigvuldiging $Fx.$
+Dan:
+
+\begin{equation}
+	Px = \frac{1}{2}(I + F)x \Leftrightarrow P = \frac{1}{2}(I+F)
+\end{equation}
+	
+* $P$ is een projector indien $P$ vierkant(gegeven) en $P$ idempotent ($P^2 = P$).
+We hebben:
+
+\begin{equation}
+	P^2 = \frac{1}{4}(I^2 + 2F + F^2)
+\end{equation}
+
+Aangezien $F$ het eerste en tweede element, het derde en vierde element enz... van een vector omwisselt, doet een tweede vermenigvuldiging met $F$ deze permutatie terug teniet. 
+Dus: $F^2 = I$ . Dan:
+
+\begin{equation}
+	P^2 = \frac{1}{4}(I + 2F + I) = \frac{1}{4}(2I + 2F) = \frac{1}{2}(I + F) = P
+\end{equation}
+
+* $P$ is een orthogonale projector $\Leftrightarrow P = P^{*}$.
+We hebben:
+
+\begin{equation}
+	P^* = \frac{1}{2}(I + F)^* = \frac{1}{2}(I^* + F^*)
+\end{equation}
+
+We kunnen nagaan dat:
+
+\begin{equation}
+	F = \begin{bmatrix}
+		0 & 1 &  \\
+  		1 & 0 &  \\
+  		  &   & 0 & 1\\
+  		  &   & 1 & 0\\
+  		  &   &   &  & \ddots &  \\
+  		  &   &   &  & 	 & 0 & 1 \\
+  		  &   &   &  &   & 1 & 0 \\
+		\end{bmatrix} 
+\end{equation}
+zodat:
+\begin{equation}
+		F^* = \begin{bmatrix}
+		0 & 1 &  \\
+  		1 & 0 &  \\
+  		  &   & 0 & 1\\
+  		  &   & 1 & 0\\
+  		  &   &   &  & \ddots &  \\
+  		  &   &   &  & 	 & 0 & 1 \\
+  		  &   &   &  &   & 1 & 0 \\
+		\end{bmatrix} 
+\end{equation}
+en dus: 
+\begin{equation}
+	P^* = \frac{1}{2}(I^* + F^*) = \frac{1}{2}(I + F) = P
+\end{equation}
+waaruit volgt dat P een orthogonale projector is.
+
+\pagebreak
+
 
 \subsection*{Opgave 2}
 
-\lipsum[7-7]
+Een Householder transformatiematrix heeft de volgende structuur:
 
+\begin{equation}
+		Q_k = \begin{bmatrix}
+		I &  \\
+  		  & F   \\
+		\end{bmatrix} 
+\end{equation}
+met $I$ de $(k-1) \times (k-1)$ eenheidsmatrix en $F$ een $(m-k+1) \times (m-k+1)$ unitaire Householder reflector.
+Deze structuur impliceert een karakteristieke veelterm van de vorm:
+\begin{equation}
+		det(\lambda I - Q_k) = (\lambda-1)^k \cdot det(\lambda I-F)
+\end{equation}
+Voor $k \geq 1$ hebben we dus steeds eigenwaarde 1 in het spectrum van $Q_k$ met algebraïsche multipliciteit $k$. 
+Aangezien dit rechtstreeks voortkomt uit het diagonaal zijn van $\begin{bmatrix} I & 0\\ \end{bmatrix}^T$, is $k$ eveneens de geometrische multipliciteit. 
+Een diagonale matrix is immers nooit defectief.
+We kunnen dan $k$ lineair onafhankelijke eigenvectoren vinden voor $\lambda = 1$.
+Dit is gemakkelijk te verifiëren.
+Neem gewoon:
+\begin{equation}
+	v_1 = \begin{bmatrix}
+		   1  \\
+  		   0  \\
+  		   0  \\
+  		   \vdots  \\
+  		   0  \\
+		  \end{bmatrix}, \quad
+  	v_2 = \begin{bmatrix}
+		   0  \\
+  		   1  \\
+  		   0  \\
+  		   \vdots  \\
+  		   0  \\
+		  \end{bmatrix}, \quad
+	v_3 = \begin{bmatrix}
+		   0  \\
+  		   0  \\
+  		   1  \\
+  		   \vdots  \\
+  		   0  \\
+		  \end{bmatrix}, \quad  \dots \quad
+	v_k = \dots
+\end{equation}
+Dan $Q_k v_j = v_j \quad(\forall j \leq k)$.
+Deze vectoren spannen de ruimte $\mathbb{R}^k$ op waartoe alle vectoren
+van de eerste $k$ rijen van een matrix $A \in \mathbb{R}^{m \times n}$ behoren (aangevuld tot dimensie $m$ met nulle. 
+Vermits elke kolomvector van A tot en met rij k (en vervolgens aangevuld met nullen tot dimensie m) een lineaire combinatie is van bovenstaande $v_j$ zal een vermenigvuldiging met $Q_k$ neerkomen op een vermenigvuldiging met $\lambda = 1$. Householder laat dus de eerste $k$ rijen van de matrix $A$ ongemoeid zoals men hoopt te verwachten van een Householder transformatiematrix.\\
+\\
+De Householder reflector $F$ zal dan zorgen voor de nodige nullen zonder voorheen aangebrachte nullen te vernietigen.
+
+\pagebreak
 \subsection*{Opgave 3}
 
 \subsubsection{deel a}
