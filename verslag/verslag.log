@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.5)  17 APR 2016 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.5)  18 APR 2016 19:49
 entering extended mode
 **verslag.tex
 (verslag.tex
@@ -681,7 +681,7 @@ been already used, duplicate ignored
                    \relax 
 l.101 
        [1]
-Underfull \hbox (badness 10000) in paragraph at lines 151--154
+Underfull \hbox (badness 10000) in paragraph at lines 147--154
 
  []
 
@@ -744,7 +744,7 @@ Here is how much of TeX's memory you used:
  11779 multiletter control sequences out of 15000+200000
  8974 words of font info for 34 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 42i,9n,40p,389b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,9n,40p,396b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
@@ -759,7 +759,7 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on verslag.pdf (5 pages, 166702 bytes).
+Output written on verslag.pdf (5 pages, 166973 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
