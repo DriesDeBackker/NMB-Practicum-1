@@ -1,12 +1,14 @@
 n = 10;
-A = rand(n,n);
-x = rand(n,1);
-b = A*x;
+A = rand(n,n)
+x = rand(n,1)
+b = A*x
 
-[Q, R] = Householder_explicit(A);
-syms y1;
-syms x1;
-eqn = Q*y == b;
-solved_y1 = solve(eqn,y1);
+[Q, R] = Householder_explicit(A)
+y1 = b\Q
+x1 = 
+%eqn1 = Q*y1 == b
+%y1 = solve(eqn1,y1)
+%eqn2 = R*x == y
+%x1 = solve(eqn2,x1)
 
 
